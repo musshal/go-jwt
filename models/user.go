@@ -1,6 +1,8 @@
 package models
 
 import (
+	"go-jwt/helpers"
+
 	"github.com/asaskevich/govalidator"
 	"github.com/gorm"
 )
@@ -21,6 +23,8 @@ func (u *User) BeforeCreate(tx *gorm.DB) (err error) {
 
 		return
 	}
+
+	u.Password = helpers.HashPass(u.Password)
 
 	err = nil
 
