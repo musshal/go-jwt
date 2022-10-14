@@ -4,7 +4,7 @@ import (
 	"go-jwt/helpers"
 
 	"github.com/asaskevich/govalidator"
-	"github.com/gorm"
+	"gorm.io/gorm"
 )
 
 type User struct {
